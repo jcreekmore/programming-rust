@@ -1,0 +1,6 @@
+[package]
+name = "fig_4"
+version = "0.1.0"
+authors = ["Jonathan Creekmore <jonathan@thecreekmores.org>"]
+
+[dependencies]
