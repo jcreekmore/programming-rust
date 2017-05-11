@@ -1,0 +1,10 @@
+[package]
+authors = ["Jonathan Creekmore <jonathan@thecreekmores.org>"]
+name = "writeint"
+version = "0.1.0"
+
+[dependencies]
+
+[dependencies.writeint]
+optional = false
+path = "."
