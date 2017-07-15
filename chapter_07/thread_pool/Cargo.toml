@@ -1,0 +1,6 @@
+[package]
+authors = ["Jonathan Creekmore <jonathan@thecreekmores.org>"]
+name = "thread_pool"
+version = "0.1.0"
+
+[dependencies]
