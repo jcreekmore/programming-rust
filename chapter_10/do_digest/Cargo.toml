@@ -1,0 +1,7 @@
+[package]
+authors = ["Jonathan Creekmore <jonathan@thecreekmores.org>"]
+name = "do_digest"
+version = "0.1.0"
+
+[dependencies]
+digest = "0.6.0"
