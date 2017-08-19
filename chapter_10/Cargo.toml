@@ -1,4 +1,5 @@
 [workspace]
 members = [
-  "do_digest"
+  "do_digest",
+  "do_digest_derive",
 ]

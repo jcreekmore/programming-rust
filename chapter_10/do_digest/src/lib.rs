@@ -1,3 +1,6 @@
+#[macro_use]
+extern crate do_digest_derive;
+
 extern crate digest;
 use digest::Digest;
 
@@ -41,4 +44,11 @@ impl<D, X> DoDigest<D> for Vec<X>
             x.update_digest(digest);
         }
     }
+}
+
+#[derive(DoDigest)]
+pub struct Foo {
+    bar: String,
+    baz: String,
+    quux: Vec<String>,
 }
