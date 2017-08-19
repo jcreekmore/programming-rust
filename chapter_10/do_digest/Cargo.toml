@@ -5,4 +5,7 @@ version = "0.1.0"
 
 [dependencies]
 digest = "0.6.0"
-do_digest_derive = { path = "../do_digest_derive" }
+sha2 = "0.6.0"
+
+[dependencies.do_digest_derive]
+path = "../do_digest_derive"

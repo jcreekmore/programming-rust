@@ -1,5 +1,8 @@
 #[macro_use]
 extern crate do_digest_derive;
+extern crate sha2;
+
+use sha2::Sha256;
 
 extern crate digest;
 use digest::Digest;
@@ -16,7 +19,7 @@ impl<D> DoDigest<D> for String
     }
 }
 
-impl<D> DoDigest<D> for str
+impl<D> DoDigest<D> for &'static str
     where D: Digest
 {
     fn update_digest(&self, digest: &mut D) {
@@ -46,9 +49,26 @@ impl<D, X> DoDigest<D> for Vec<X>
     }
 }
 
-#[derive(DoDigest)]
-pub struct Foo {
-    bar: String,
-    baz: String,
-    quux: Vec<String>,
+pub fn compute_digest<X: DoDigest<Sha256>>(val: &X) -> String {
+    let mut hasher = Sha256::default();
+    val.update_digest(&mut hasher);
+    format!("{:x}", hasher.result())
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[derive(DoDigest)]
+    pub struct Foo {
+        bar: &'static str,
+        baz: &'static str,
+        quux: Vec<&'static str>,
+    }
+
+    #[test]
+    fn testme() {
+        let test = Foo { bar: "Bar", baz: "Baz", quux: vec!["1", "2", "3"] };
+        println!("{}", compute_digest(&test));
+    }
 }
