@@ -1,5 +1,5 @@
 [package]
-name = "fig_5"
+name = "demo_struct"
 version = "0.1.0"
 authors = ["Jonathan Creekmore <jonathan@thecreekmores.org>"]
 

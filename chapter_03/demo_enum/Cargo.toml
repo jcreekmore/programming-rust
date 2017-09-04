@@ -1,5 +1,5 @@
 [package]
-name = "fig_1"
+name = "demo_enum"
 version = "0.1.0"
 authors = ["Jonathan Creekmore <jonathan@thecreekmores.org>"]
 
